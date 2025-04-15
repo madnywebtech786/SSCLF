@@ -6,6 +6,21 @@ $('.cookie-button button').click(function () {
 
 // slider
 jQuery(document).ready(function () {
+
+    $("#mobile-menu-open-button").on("click", function () {
+        // Toggle the mobile menu
+        $("#mobile-menu").addClass("open"); // Remove 'hidden' from the button
+        $("#mobile-menu-close-button").removeClass("hidden");
+        $(this).addClass("hidden");
+        // Add the 'hidden' class to the button when menu is opened and remove when closed
+    });
+
+    $("#mobile-menu-close-button").on("click", function () {
+        $("#mobile-menu-close-button").addClass("hidden");
+        $("#mobile-menu").removeClass("open"); // Remove 'hidden' from the button
+        $("#mobile-menu-open-button").removeClass("hidden");
+    });
+
     $('.slider').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
